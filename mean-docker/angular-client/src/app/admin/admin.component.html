@@ -1,0 +1,64 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Employee Id</th>
+       <th>Location</th>
+      <th>Pickup</th>
+      <th>Drop</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let index=index;">
+      <th scope="row">{{index}}</th>
+      <td>{{employee.name}}</td>
+      <td>{{employee.id}}</td>
+      <td>{{employee.location}}</td>
+      <td>{{employee.pickup}}</td>
+      <td>{{employee.drop}}</td>
+      <td><button (click)="onEdit(index);modal1.show()"> Edit </button>
+      <button (click)="onDelete(index)"> Delete </button></td>
+    </tr>
+  </tbody>
+</table>
+
+  <app-modal #modal1>
+    <div class="app-modal-header">
+     <div><h2>Update Employee Details</h2></div>
+    </div>
+    <div class="app-modal-body">
+        
+  <div [style.margin-top.px]="10" class="text" *ngIf="selectedEmp">
+    <span>Please enter your details. All fields are mandatory</span>
+    <form class="">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"  [(ngModel)]="selectedEmp.name" [ngModelOptions]="{standalone: true}" #name>
+      </div>
+      <div class="form-group">
+        <label for="age">Id</label>
+        <input type="number" class="form-control" id="id"[(ngModel)]="selectedEmp.id" [ngModelOptions]="{standalone: true}" #id>
+      </div>
+      <div class="form-group">
+        <label for="name">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="selectedEmp.location" [ngModelOptions]="{standalone: true}" #location>
+      </div>
+      <div class="form-group">
+        <label for="name">Pickup</label>
+        <input type="checkbox" class="form-control" id="pickup" [(ngModel)]="selectedEmp.pickup" [ngModelOptions]="{standalone: true}" #pickup>
+      </div>
+      <div class="form-group">
+        <label for="name">Drop</label>
+        <input type="checkbox" class="form-control" id="drop" [(ngModel)]="selectedEmp.drop" [ngModelOptions]="{standalone: true}" #drop>
+      </div>
+      <button type="button" (click)="onUpdate(name.value, id.value,location.value,pickup.value,drop.value);modal1.hide()" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
+      <button type="button" class="btn btn-primary" (click)="onUpdate(name.value, id.value,location.value,pickup.value,drop.value)" >Save changes</button>
+    </div>
+  </app-modal>

@@ -1,0 +1,10 @@
+.text{
+	margin-top: 10px;
+  clear: both;
+  color: #6464a0;
+}
+#pickup,#drop
+{
+	  width: 50px;
+    height: 18px;
+}

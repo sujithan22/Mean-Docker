@@ -1,0 +1,30 @@
+header{
+	height: 60px;
+    background: #539615;
+    text-align: center;
+    line-height: 10px;
+    font: italic 22px Georgia, "Times New Roman", Times, serif;
+    color: #fff;
+}
+ul{
+	list-style: none;
+    font: italic 14px Georgia, "Times New Roman", Times, serif;
+    color: #fff;
+    background: #454545;
+    height: 40px;
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+span{
+	margin-top: 15px;
+	display: inline-block;
+}
+.navLinks li{
+	margin-right:15px;
+	float:left;
+    margin-top: 10px;
+}
+

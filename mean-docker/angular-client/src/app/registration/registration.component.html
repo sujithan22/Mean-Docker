@@ -1,0 +1,30 @@
+<div class="col-md-8">
+	<div><h2>Employee Registration</h2></div>
+  <div [style.margin-top.px]="10" class="text">
+    <span>Please enter your details. All fields are mandatory</span>
+    <form class="">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" #name>
+      </div>
+      <div class="form-group">
+        <label for="age">Id</label>
+        <input type="number" class="form-control" id="id" #id>
+      </div>
+      <div class="form-group">
+        <label for="name">Location</label>
+        <input type="text" class="form-control" id="location" #location>
+      </div>
+      <div class="form-group">
+        <label for="name">Pickup</label>
+        <input type="checkbox" class="form-control" id="pickup" #pickup>
+      </div>
+      <div class="form-group">
+        <label for="name">Drop</label>
+        <input type="checkbox" class="form-control" id="drop" #drop>
+      </div>
+      <button type="button" (click)="addPerson(name.value, id.value,location.value,pickup.value,drop.value)" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</div>
